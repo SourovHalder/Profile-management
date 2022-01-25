@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\profileController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/createprofile', function () {
     return view('/createprofile');
 });
+Route::view('/add','createprofile');
+Route::post('/add',[profileController::class,'add']);
