@@ -18,5 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/createprofile', function () {
     return view('/createprofile');
 });
-Route::view('/add','createprofile');
-Route::post('/add',[profileController::class,'add']);
+Route::get('/',function(){
+    return view('welcome');
+});
+Route::view('/add', 'createprofile');
+Route::post('/add', [profileController::class, 'add']);
+
+Route::get('/pList',[profileController::class, 'show'] );
+Route::get('edit/{id}',[profileController::class, 'edit']);
+Route::put('update/{id}',[profileController::class, 'update']);
+Route::get('delete/{id}',[profileController::class, 'delete']);
